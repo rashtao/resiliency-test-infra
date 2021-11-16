@@ -1,9 +1,11 @@
 package com.arangodb
 
 import eu.rekawek.toxiproxy.ToxiproxyClient
+import io.quarkus.runtime.Startup
 import org.mockserver.integration.ClientAndServer
 import javax.inject.Singleton
 
+@Startup
 @Singleton
 class DeploymentManager {
 
