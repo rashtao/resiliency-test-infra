@@ -9,7 +9,6 @@ release.properties
 .project
 .classpath
 .settings/
-bin/
 
 # IntelliJ
 .idea
@@ -40,3 +39,4 @@ nb-configuration.xml
 
 **/.directory
 
+/bin/toxiproxy-server-linux-amd64

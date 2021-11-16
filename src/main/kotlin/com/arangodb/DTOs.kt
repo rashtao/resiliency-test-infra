@@ -24,6 +24,13 @@ data class LatencyToxic(
     val latency: Long
 )
 
+data class ResetPeerToxic(
+    @field:Schema(required = true, example = "UPSTREAM")
+    val direction: ToxicDirection,
+    @field:Schema(required = true, description = "ms", example = "5000")
+    val timeout: Long
+)
+
 data class MockRequest(
     @field:Schema(
         required = false,

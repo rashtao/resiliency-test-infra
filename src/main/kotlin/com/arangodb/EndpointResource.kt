@@ -1,7 +1,6 @@
 package com.arangodb
 
 import eu.rekawek.toxiproxy.model.Toxic
-import eu.rekawek.toxiproxy.model.ToxicDirection
 import org.eclipse.microprofile.openapi.annotations.Operation
 import org.mockserver.model.HttpRequest
 import org.mockserver.model.HttpResponse
@@ -52,11 +51,11 @@ class EndpointResource(private val ep: Endpoint) {
     @Path("/resetPeer")
     @Operation(
         summary = "Connection reset by peer",
-        description = "Simulate a downstream TCP RESET on the open connections"
+        description = "Simulate a TCP RESET on the new connections"
     )
-    fun resetPeer() {
+    fun resetPeer(t: ResetPeerToxic) {
         ep.removeToxic("resetPeer")
-        ep.proxy.toxics().resetPeer("resetPeer", ToxicDirection.DOWNSTREAM, 0)
+        ep.proxy.toxics().resetPeer("resetPeer", t.direction, t.timeout)
     }
 
     @POST

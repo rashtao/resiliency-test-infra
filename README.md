@@ -9,7 +9,12 @@ Start ArangoDB docker containers:
 ./docker/start_db_active-failover.sh docker.io/arangodb/arangodb:3.8.2
 ```
 
-Start [toxiproxy-server](https://github.com/Shopify/toxiproxy) at `127.0.0.1:8474`.
+Start [toxiproxy-server](https://github.com/Shopify/toxiproxy) at `127.0.0.1:8474`:
+
+```shell
+./bin/downloadProxy.sh
+./bin/toxiproxy-server-linux-amd64
+```
 
 
 ## API
